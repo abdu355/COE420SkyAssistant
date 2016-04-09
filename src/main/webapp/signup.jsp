@@ -20,37 +20,40 @@
 
     <body>
         <div id="toolbar"></div>
-        <div id="myForm" style="width: auto" ></div>
+        <form action="/sign" method="post">
+            Full Name: <input type="text" name="Name" value="" />
+            <div> </div>
+            Password: <input type="password" name="Password" value="" />
+            <div> </div>
+            Email:  <input type="text" name="Email" value="" />
+            <div> </div>
+            Age: <input type="text" name="Age" value="" />
+            <div> </div>
+            Gender: 
+            Male<input type="radio" name="Gender" value="Male" />
+            <div> </div>
+            Female<input type="radio" name="Gender" value="Female" />
+            <div> </div>
+            Country: <select name="Country">
+                <option>UAE</option>
+                <option>Qatar</option>
+                <option>Bahrain</option>
+                <option>KSA</option>
+                <option>Kuwait</option>
+            </select>
+            <div> </div>
+            <input type="submit" value="Signup" />
 
-        <%
-            DataStoreFunctions ds = new DataStoreFunctions();
-            
-            
-           
-        %>
-       
-        <script>
-            $(function () {
-                $('#myForm').w2form({
-                    name    : 'myForm',
-                    url     : '/signup.jsp',
-                    fields: [
-                        {name: 'first_name', type: 'text', required: true},
-                        {name: 'last_name', type: 'text', required: true},
-                        {name: 'email', type: 'text', required: true}
-                    ],
-                    actions: {
-                        reset: function (target,data) {
-                            this.clear();
-                         },
-                        save: function (target,data) {
-                            this.save();
-   
-                        }
-                    }
-                });
-            });
-        </script>
+        </form>
+
+
+
+
+
+
+
+
+
         <script>
             $('#toolbar').w2toolbar({
                 name: 'toolbar',

@@ -11,7 +11,7 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>homepage.jsp</welcome-file>
+        <welcome-file>signup.jsp</welcome-file>
     </welcome-file-list>
     <filter>
         <filter-name>ObjectifyFilter</filter-name>

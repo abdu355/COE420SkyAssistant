@@ -31,7 +31,7 @@ public class DataStoreFunctions {
         //bucket = cluster.openBucket();
     }
 
-    public void createUser(String... params) {
+    public void createUser(String... params) { 
        // String uniqueID = UUID.randomUUID().toString();
 //        JsonObject user = JsonObject.empty()
 //                .put("fullname", params[0])

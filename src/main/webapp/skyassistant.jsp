@@ -93,10 +93,12 @@
             <div><input type="submit" value="Post Greeting"/></div>
             <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
         </form>
+        
         <form action="/skyassistant.jsp" method="get">
             <div><input type="text" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/></div>
             <div><input type="submit" value="Switch Guestbook"/></div>
         </form>
+            
         <form action="/airlineview.jsp" method="get">
             <div><input type="submit" value="View Airlines"/></div>
         </form>

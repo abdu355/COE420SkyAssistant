@@ -1,4 +1,10 @@
 
+
+
+<%@page import="AppLogic.myUser"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@page import="com.googlecode.objectify.ObjectifyService"%>
+
 <%-- 
     Document   : airlineview
     Created on : Apr 3, 2016, 5:53:19 PM
@@ -16,9 +22,28 @@
         <title>Airline Viewer</title>
     </head>
     <body>
-        <div id="toolbar"></div>
-        <h1> Welcome to SkyAssistant! </h1>
-        <div id="myGrid" style="height: 450px"></div>
+         <div id="toolbar"></div>
+        <%
+            String useremail = request.getParameter("Email");
+             if (useremail == null) {
+                useremail = " ";
+            }
+        myUser user = new myUser();
+        user = ObjectifyService.ofy().load().type(myUser.class).filter("email", "hello.sah802@gmail.com").first().now();
+        
+            %>
+        <h1> Welcome <%=user.getuserName()%> !</h1>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <script>
             $('#toolbar').w2toolbar({
                 name: 'toolbar',
@@ -50,24 +75,8 @@
                 }
             });
             </script>
-          
-            <script>
-                $('#myGrid').w2grid({
-                    name: 'myGrid',
-                    columns: [
-                        {field: 'fname', caption: 'Airline', size: '30%'},
-                        {field: 'lname', caption: 'Destination', size: '30%'},
-                        {field: 'email', caption: 'Flight', size: '40%'},
-                        {field: 'sdate', caption: 'Date', size: '120px'},
-                    ],
-                    records: [
-                        {recid: 1, fname: 'Emirates Airlines', lname: 'Berlin', email: '#4545', sdate: '4/3/2017'},
-                        {recid: 2, fname: 'Emirates Airlines', lname: 'London', email: '#6677', sdate: '4/3/2017'},
-                        {recid: 3, fname: 'Air Canada', lname: 'Ontario', email: '#3344', sdate: '4/3/2017'}
-                        
-                    ]
-                });
-            </script>
+        
+     
     </body>
 
 
